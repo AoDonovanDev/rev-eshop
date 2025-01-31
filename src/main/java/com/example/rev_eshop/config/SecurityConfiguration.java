@@ -20,13 +20,18 @@ public class SecurityConfiguration {
     @Autowired
     AuthenticationProvider authenticationProvider;
 
+    private static final String[] WHITELIST = {"/api/v1/auth/**",
+    "/swagger-ui/**",
+    "/swagger-ui.html",
+    "/v3/api-docs/**"};
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         
         http
             .csrf().disable()
             .authorizeHttpRequests()
-            .requestMatchers("/api/v1/auth/**") //whitelisted unprotected routes
+            .requestMatchers(WHITELIST) //whitelisted unprotected routes
             .permitAll()
             .anyRequest()
             .authenticated()

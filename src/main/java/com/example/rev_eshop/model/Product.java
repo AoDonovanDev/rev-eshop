@@ -16,6 +16,10 @@ public class Product {
     @Column(name="price")
     private Double price;
 
+    @Column(name="sellerId")
+    private Integer sellerId;
+
+
     public Product() {
     }
 
@@ -41,5 +45,13 @@ public class Product {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Integer getSellerId() {
+        return sellerId;
+    }
+
+    public void setSellerId(Integer sellerId) {
+        this.sellerId = sellerId;
     }
 }
