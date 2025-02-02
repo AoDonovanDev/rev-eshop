@@ -1,4 +1,7 @@
 package com.example.rev_eshop.model;
+import java.util.List;
+import com.example.rev_eshop.model.ProductCategory;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -18,6 +21,16 @@ public class Product {
 
     @Column(name="sellerId")
     private Integer sellerId;
+
+    @Column(name="category")
+    @Enumerated(EnumType.STRING)
+    private ProductCategory category;
+
+    @ManyToMany
+    @JoinTable(name="OrderProduct",
+    joinColumns=@JoinColumn(name="productId", referencedColumnName="productId"),
+    inverseJoinColumns=@JoinColumn(name="orderId", referencedColumnName="orderId"))
+    private List<ShopOrder> orders;
 
 
     public Product() {

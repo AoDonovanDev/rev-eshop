@@ -12,7 +12,7 @@ import com.stripe.param.CustomerCreateParams;
 public class StripeExample {
 
     public static void main(String[] args) {
-        StripeClient client = new StripeClient("sk_test_...");
+        StripeClient client = new StripeClient(System.getenv("stripe_key"));
         CustomerCreateParams params =
             CustomerCreateParams
                 .builder()
