@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.rev_eshop.model.ShopUser;
 import com.example.rev_eshop.service.ShopUserService;
 
-@RestController
+/* @RestController
 public class RevEshopController {
 
     @Autowired
@@ -19,7 +19,8 @@ public class RevEshopController {
 
     @GetMapping("/")
     public @ResponseBody ResponseEntity<String> home(){
-        return ResponseEntity.status(200).body("Hello!");
+        System.err.println("HEY THIS IS THE ROOT GET ROUTE WTF WTF");
+        return ResponseEntity.ok("Hello!");
     }
 
     @PostMapping("/user")
@@ -33,4 +34,4 @@ public class RevEshopController {
         }
         
     }
-}
+} */
